@@ -1,0 +1,31 @@
+@import "../../../../flex.less";
+
+.shapes-wrapper {
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 50%;
+
+  .shape {
+    background-color: transparent;
+  }
+  .selected {
+    line {
+      // The line will get a shadow when selected and will look glowing
+
+      stroke-width: 2;
+      stroke-opacity: 0.5;
+      transition: stroke-width 0.2s ease-in-out, stroke-opacity 0.2s ease-in-out;
+    }
+  }
+
+  line {
+    stroke-width: 2;
+  }
+}
+.color-btn {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 50%;
+}

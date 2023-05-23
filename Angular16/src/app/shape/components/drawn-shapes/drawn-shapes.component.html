@@ -1,0 +1,33 @@
+<div class="shapes-wrapper flex">
+  <div *ngFor="let shape of shapes" class="flex">
+    <svg
+      (click)="toggleSelection(shape)"
+      [class.selected]="shape.selected"
+      class="shape"
+      [attr.width]="getSvgWidth(shape)"
+      [attr.height]="getSvgHeight(shape)"
+    >
+      <ng-container *ngFor="let line of shape.lines">
+        <line
+          [attr.x1]="line.fromX"
+          [attr.y1]="line.fromY"
+          [attr.x2]="line.toX"
+          [attr.y2]="line.toY"
+          [attr.stroke]="shape.color"
+        ></line>
+      </ng-container>
+    </svg>
+  </div>
+</div>
+<div class="colors">
+  <button
+    class="color-btn"
+    *ngFor="let color of colors"
+    (click)="setColor(color)"
+    [style.background-color]="color"
+  ></button>
+</div>
+<div class="ops-btn-wrapper">
+  <button class (click)="saveShapesData()">Save</button>
+  <button (click)="loadShapesData()">Load</button>
+</div>

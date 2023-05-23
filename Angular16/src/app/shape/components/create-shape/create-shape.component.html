@@ -1,0 +1,14 @@
+<div class="create-shape-wrapper flex flex-column">
+  <canvas
+    id="canvasEl"
+    #canvasEl
+    width="800"
+    height="600"
+    (mousedown)="startDrawing($event)"
+    (mousemove)="drawShape($event)"
+    (mouseup)="finishDrawing($event)"
+  ></canvas>
+  <button (click)="addShape()" [disabled]="!waitingForConfirmation">Add</button>
+  <button (click)="undo()">Undo</button>
+  <button (click)="redo()">Redo</button>
+</div>
